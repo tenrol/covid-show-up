@@ -1,0 +1,39 @@
+/**
+ * Case entity.
+ * @author Lorent.
+ */
+entity PatientCase {
+    patientId UUID,
+    country Country required,
+    department Department required,
+    zipCode Integer required,
+    sickDate LocalDate required,
+    date LocalDate required,
+    cough Boolean,
+    fever Boolean,
+    tiredness Boolean,
+    difficultyBreathing Boolean,
+    cardiovascularDisease Boolean,
+    diabetes Boolean,
+    chronicObstructivePulmonaryDisease Boolean,
+    cancer Boolean,
+    hypertension Boolean,
+    age Integer required,
+    sex Sex required,
+    numberOfFlatMates Integer required,
+    testDone Boolean
+}
+
+/** Patient Sex */
+enum Sex {
+    MALE, FEMALE
+}
+enum Country {
+    FRANCE
+}
+enum Department {
+    HAUT_RHIN, BAS_RHIN
+}
+
+// Set pagination options
+paginate PatientCase with infinite-scroll

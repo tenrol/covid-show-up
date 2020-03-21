@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.tenrol.covidshowup"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "covidShowUp",
+    "packageName": "com.tenrol.covidshowup",
+    "packageFolder": "com/tenrol/covidshowup",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NTM3ZjFkN2E5ZmJjY2QyNWY5MTk4ZjUyYzY1MTk0Mjk2YzcwMTNhNDhiOWRhZjhlNzUyYmIwMDQ0MDFjM2M1YTJmNDhmYzkxOTI4NzUwOTAzZjYxNWRmOGVjYzRjOWJhMDZkYjE4ZmE5ZmFlYWM2MzJlYzk3YWUzNGY0Y2NiMjk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "flatly",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1584796176249,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
