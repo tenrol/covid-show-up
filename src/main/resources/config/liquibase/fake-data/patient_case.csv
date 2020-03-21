@@ -1,0 +1,11 @@
+id;patient_id;country;department;zip_code;sick_date;date;cough;fever;tiredness;difficulty_breathing;cardiovascular_disease;diabetes;chronic_obstructive_pulmonary_disease;cancer;hypertension;age;sex;number_of_flat_mates;test_done
+1;bce12c35-1b64-4fac-adc9-28a008bdca3c;FRANCE;BAS_RHIN;70259;2020-03-21;2020-03-20;true;false;true;false;true;false;true;false;false;405;FEMALE;4381;false
+2;c61aa234-4a23-4aff-ae30-a5b62f7493e2;FRANCE;HAUT_RHIN;75333;2020-03-21;2020-03-20;false;false;false;false;false;true;false;false;false;13398;MALE;30493;true
+3;aa2ecbf0-d2f5-4bd2-8f54-f17bff12d92c;FRANCE;BAS_RHIN;76081;2020-03-20;2020-03-21;true;true;true;true;false;true;true;true;false;49875;MALE;98006;true
+4;8f737371-09a3-4cdf-8087-0c29956ea594;FRANCE;HAUT_RHIN;38335;2020-03-21;2020-03-20;false;true;true;true;false;true;false;false;false;17081;FEMALE;46903;true
+5;0b72332c-76ab-49ea-ac55-82242fe9374b;FRANCE;HAUT_RHIN;41117;2020-03-20;2020-03-20;false;true;true;true;false;true;true;false;false;62977;MALE;1885;false
+6;a6f9da03-ecc4-47b2-9472-d49298675658;FRANCE;BAS_RHIN;13261;2020-03-21;2020-03-20;false;true;true;false;true;false;true;false;true;26711;MALE;15773;false
+7;893cf225-651e-4cdb-ac8c-4d556afb2f3b;FRANCE;BAS_RHIN;67618;2020-03-20;2020-03-20;true;true;false;false;true;true;true;true;false;83533;FEMALE;91345;true
+8;2e906ae9-bdad-4df6-9cda-40c22eaabb22;FRANCE;HAUT_RHIN;25199;2020-03-21;2020-03-21;true;true;true;true;false;true;false;false;false;3276;FEMALE;28344;false
+9;9f455178-4a2f-41c9-97b6-de761d34d2f8;FRANCE;HAUT_RHIN;56244;2020-03-20;2020-03-20;false;true;false;true;true;false;false;true;true;65182;FEMALE;1762;true
+10;3470f4df-4f0f-4305-bacf-7d809ab40852;FRANCE;BAS_RHIN;80002;2020-03-21;2020-03-20;false;true;false;true;false;false;false;true;true;63136;MALE;18283;false

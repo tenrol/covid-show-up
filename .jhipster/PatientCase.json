@@ -1,0 +1,121 @@
+{
+    "name": "PatientCase",
+    "fields": [
+        {
+            "fieldName": "patientId",
+            "fieldType": "UUID"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "Country",
+            "fieldValues": "FRANCE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "department",
+            "fieldType": "Department",
+            "fieldValues": "HAUT_RHIN,BAS_RHIN",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "zipCode",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sickDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cough",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fever",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "tiredness",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "difficultyBreathing",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "cardiovascularDisease",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "diabetes",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "chronicObstructivePulmonaryDisease",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "cancer",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "hypertension",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "Sex",
+            "fieldValues": "MALE,FEMALE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numberOfFlatMates",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "testDone",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200321132400",
+    "javadoc": "Case entity.\\n@author Lorent.",
+    "entityTableName": "patient_case",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

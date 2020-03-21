@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="patientCase">
+            <h2><span>Patient Case</span> {{ patientCase.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Patient Id</span></dt>
+                <dd>
+                    <span>{{ patientCase.patientId }}</span>
+                </dd>
+                <dt><span>Country</span></dt>
+                <dd>
+                    <span>{{ patientCase.country }}</span>
+                </dd>
+                <dt><span>Department</span></dt>
+                <dd>
+                    <span>{{ patientCase.department }}</span>
+                </dd>
+                <dt><span>Zip Code</span></dt>
+                <dd>
+                    <span>{{ patientCase.zipCode }}</span>
+                </dd>
+                <dt><span>Sick Date</span></dt>
+                <dd>
+                    <span>{{ patientCase.sickDate }}</span>
+                </dd>
+                <dt><span>Date</span></dt>
+                <dd>
+                    <span>{{ patientCase.date }}</span>
+                </dd>
+                <dt><span>Cough</span></dt>
+                <dd>
+                    <span>{{ patientCase.cough }}</span>
+                </dd>
+                <dt><span>Fever</span></dt>
+                <dd>
+                    <span>{{ patientCase.fever }}</span>
+                </dd>
+                <dt><span>Tiredness</span></dt>
+                <dd>
+                    <span>{{ patientCase.tiredness }}</span>
+                </dd>
+                <dt><span>Difficulty Breathing</span></dt>
+                <dd>
+                    <span>{{ patientCase.difficultyBreathing }}</span>
+                </dd>
+                <dt><span>Cardiovascular Disease</span></dt>
+                <dd>
+                    <span>{{ patientCase.cardiovascularDisease }}</span>
+                </dd>
+                <dt><span>Diabetes</span></dt>
+                <dd>
+                    <span>{{ patientCase.diabetes }}</span>
+                </dd>
+                <dt><span>Chronic Obstructive Pulmonary Disease</span></dt>
+                <dd>
+                    <span>{{ patientCase.chronicObstructivePulmonaryDisease }}</span>
+                </dd>
+                <dt><span>Cancer</span></dt>
+                <dd>
+                    <span>{{ patientCase.cancer }}</span>
+                </dd>
+                <dt><span>Hypertension</span></dt>
+                <dd>
+                    <span>{{ patientCase.hypertension }}</span>
+                </dd>
+                <dt><span>Age</span></dt>
+                <dd>
+                    <span>{{ patientCase.age }}</span>
+                </dd>
+                <dt><span>Sex</span></dt>
+                <dd>
+                    <span>{{ patientCase.sex }}</span>
+                </dd>
+                <dt><span>Number Of Flat Mates</span></dt>
+                <dd>
+                    <span>{{ patientCase.numberOfFlatMates }}</span>
+                </dd>
+                <dt><span>Test Done</span></dt>
+                <dd>
+                    <span>{{ patientCase.testDone }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/patient-case', patientCase.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

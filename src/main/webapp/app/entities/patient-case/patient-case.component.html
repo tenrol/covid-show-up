@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span>Patient Cases</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-patient-case" [routerLink]="['/patient-case/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Patient Case
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="patientCases?.length === 0">
+        <span>No patientCases found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="patientCases?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="patientId"><span>Patient Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="country"><span>Country</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="department"><span>Department</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="zipCode"><span>Zip Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sickDate"><span>Sick Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date"><span>Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cough"><span>Cough</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fever"><span>Fever</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tiredness"><span>Tiredness</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="difficultyBreathing"><span>Difficulty Breathing</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cardiovascularDisease"><span>Cardiovascular Disease</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="diabetes"><span>Diabetes</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="chronicObstructivePulmonaryDisease"><span>Chronic Obstructive Pulmonary Disease</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cancer"><span>Cancer</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="hypertension"><span>Hypertension</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="age"><span>Age</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sex"><span>Sex</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numberOfFlatMates"><span>Number Of Flat Mates</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="testDone"><span>Test Done</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let patientCase of patientCases ;trackBy: trackId">
+                    <td><a [routerLink]="['/patient-case', patientCase.id, 'view']">{{ patientCase.id }}</a></td>
+                    <td>{{ patientCase.patientId }}</td>
+                    <td>{{ patientCase.country }}</td>
+                    <td>{{ patientCase.department }}</td>
+                    <td>{{ patientCase.zipCode }}</td>
+                    <td>{{ patientCase.sickDate | date:'mediumDate' }}</td>
+                    <td>{{ patientCase.date | date:'mediumDate' }}</td>
+                    <td>{{ patientCase.cough }}</td>
+                    <td>{{ patientCase.fever }}</td>
+                    <td>{{ patientCase.tiredness }}</td>
+                    <td>{{ patientCase.difficultyBreathing }}</td>
+                    <td>{{ patientCase.cardiovascularDisease }}</td>
+                    <td>{{ patientCase.diabetes }}</td>
+                    <td>{{ patientCase.chronicObstructivePulmonaryDisease }}</td>
+                    <td>{{ patientCase.cancer }}</td>
+                    <td>{{ patientCase.hypertension }}</td>
+                    <td>{{ patientCase.age }}</td>
+                    <td>{{ patientCase.sex }}</td>
+                    <td>{{ patientCase.numberOfFlatMates }}</td>
+                    <td>{{ patientCase.testDone }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/patient-case', patientCase.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/patient-case', patientCase.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(patientCase)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

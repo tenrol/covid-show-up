@@ -1,0 +1,213 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-patient-case-heading">Create or edit a Patient Case</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_patientId">Patient Id</label>
+                    <input type="text" class="form-control" name="patientId" id="field_patientId"
+                           formControlName="patientId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_country">Country</label>
+                    <select class="form-control" name="country" formControlName="country" id="field_country">
+                        <option value="FRANCE">FRANCE</option>
+                    </select>
+                    <div *ngIf="editForm.get('country')!.invalid && (editForm.get('country')!.dirty || editForm.get('country')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('country')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_department">Department</label>
+                    <select class="form-control" name="department" formControlName="department" id="field_department">
+                        <option value="HAUT_RHIN">HAUT_RHIN</option>
+                        <option value="BAS_RHIN">BAS_RHIN</option>
+                    </select>
+                    <div *ngIf="editForm.get('department')!.invalid && (editForm.get('department')!.dirty || editForm.get('department')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('department')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_zipCode">Zip Code</label>
+                    <input type="number" class="form-control" name="zipCode" id="field_zipCode"
+                           formControlName="zipCode"/>
+                    <div *ngIf="editForm.get('zipCode')!.invalid && (editForm.get('zipCode')!.dirty || editForm.get('zipCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('zipCode')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('zipCode')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sickDate">Sick Date</label>
+                    <div class="input-group">
+                        <input id="field_sickDate" type="text" class="form-control" name="sickDate" ngbDatepicker #sickDateDp="ngbDatepicker" formControlName="sickDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sickDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('sickDate')!.invalid && (editForm.get('sickDate')!.dirty || editForm.get('sickDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('sickDate')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker #dateDp="ngbDatepicker" formControlName="date"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('date')!.invalid && (editForm.get('date')!.dirty || editForm.get('date')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('date')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cough">Cough</label>
+                    <input type="checkbox" class="form-control" name="cough" id="field_cough"
+                           formControlName="cough"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fever">Fever</label>
+                    <input type="checkbox" class="form-control" name="fever" id="field_fever"
+                           formControlName="fever"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tiredness">Tiredness</label>
+                    <input type="checkbox" class="form-control" name="tiredness" id="field_tiredness"
+                           formControlName="tiredness"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_difficultyBreathing">Difficulty Breathing</label>
+                    <input type="checkbox" class="form-control" name="difficultyBreathing" id="field_difficultyBreathing"
+                           formControlName="difficultyBreathing"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cardiovascularDisease">Cardiovascular Disease</label>
+                    <input type="checkbox" class="form-control" name="cardiovascularDisease" id="field_cardiovascularDisease"
+                           formControlName="cardiovascularDisease"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_diabetes">Diabetes</label>
+                    <input type="checkbox" class="form-control" name="diabetes" id="field_diabetes"
+                           formControlName="diabetes"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_chronicObstructivePulmonaryDisease">Chronic Obstructive Pulmonary Disease</label>
+                    <input type="checkbox" class="form-control" name="chronicObstructivePulmonaryDisease" id="field_chronicObstructivePulmonaryDisease"
+                           formControlName="chronicObstructivePulmonaryDisease"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cancer">Cancer</label>
+                    <input type="checkbox" class="form-control" name="cancer" id="field_cancer"
+                           formControlName="cancer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hypertension">Hypertension</label>
+                    <input type="checkbox" class="form-control" name="hypertension" id="field_hypertension"
+                           formControlName="hypertension"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_age">Age</label>
+                    <input type="number" class="form-control" name="age" id="field_age"
+                           formControlName="age"/>
+                    <div *ngIf="editForm.get('age')!.invalid && (editForm.get('age')!.dirty || editForm.get('age')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('age')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('age')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sex">Sex</label>
+                    <select class="form-control" name="sex" formControlName="sex" id="field_sex">
+                        <option value="MALE">MALE</option>
+                        <option value="FEMALE">FEMALE</option>
+                    </select>
+                    <div *ngIf="editForm.get('sex')!.invalid && (editForm.get('sex')!.dirty || editForm.get('sex')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('sex')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numberOfFlatMates">Number Of Flat Mates</label>
+                    <input type="number" class="form-control" name="numberOfFlatMates" id="field_numberOfFlatMates"
+                           formControlName="numberOfFlatMates"/>
+                    <div *ngIf="editForm.get('numberOfFlatMates')!.invalid && (editForm.get('numberOfFlatMates')!.dirty || editForm.get('numberOfFlatMates')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('numberOfFlatMates')?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('numberOfFlatMates')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testDone">Test Done</label>
+                    <input type="checkbox" class="form-control" name="testDone" id="field_testDone"
+                           formControlName="testDone"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

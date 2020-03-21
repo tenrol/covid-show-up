@@ -42,6 +42,7 @@ public class CacheConfiguration {
             createCache(cm, com.tenrol.covidshowup.domain.User.class.getName());
             createCache(cm, com.tenrol.covidshowup.domain.Authority.class.getName());
             createCache(cm, com.tenrol.covidshowup.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.tenrol.covidshowup.domain.PatientCase.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
