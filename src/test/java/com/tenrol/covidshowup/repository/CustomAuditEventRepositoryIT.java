@@ -1,10 +1,16 @@
 package com.tenrol.covidshowup.repository;
 
-import com.tenrol.covidshowup.CovidShowUpApp;
+import static com.tenrol.covidshowup.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import com.tenrol.covidshowup.config.Constants;
-import com.tenrol.covidshowup.config.audit.AuditEventConverter;
-import com.tenrol.covidshowup.domain.PersistentAuditEvent;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +21,10 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.servlet.http.HttpSession;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static com.tenrol.covidshowup.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
+import com.tenrol.covidshowup.CovidShowUpApp;
+import com.tenrol.covidshowup.config.Constants;
+import com.tenrol.covidshowup.config.audit.AuditEventConverter;
+import com.tenrol.covidshowup.domain.PersistentAuditEvent;
 
 /**
  * Integration tests for {@link CustomAuditEventRepository}.

@@ -1,8 +1,8 @@
 package com.tenrol.covidshowup.repository;
 
-import com.tenrol.covidshowup.domain.Authority;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.tenrol.covidshowup.domain.Authority;
 
 /**
  * Spring Data JPA repository for the {@link Authority} entity.

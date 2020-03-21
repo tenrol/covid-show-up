@@ -1,23 +1,28 @@
 package com.tenrol.covidshowup.domain;
 
-import io.swagger.annotations.ApiModel;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
-
-import java.io.Serializable;
-import java.util.Objects;
-import java.time.LocalDate;
-import java.util.UUID;
-
 import com.tenrol.covidshowup.domain.enumeration.Country;
-
 import com.tenrol.covidshowup.domain.enumeration.Department;
-
 import com.tenrol.covidshowup.domain.enumeration.Sex;
+
+import io.swagger.annotations.ApiModel;
 
 /**
  * Case entity.\n@author Lorent.

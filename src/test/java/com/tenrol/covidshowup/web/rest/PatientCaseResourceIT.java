@@ -1,8 +1,21 @@
 package com.tenrol.covidshowup.web.rest;
 
-import com.tenrol.covidshowup.CovidShowUpApp;
-import com.tenrol.covidshowup.domain.PatientCase;
-import com.tenrol.covidshowup.repository.PatientCaseRepository;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.List;
+import java.util.UUID;
+
+import javax.persistence.EntityManager;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,20 +26,13 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.List;
-import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.hasItem;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
+import com.tenrol.covidshowup.CovidShowUpApp;
+import com.tenrol.covidshowup.domain.PatientCase;
 import com.tenrol.covidshowup.domain.enumeration.Country;
 import com.tenrol.covidshowup.domain.enumeration.Department;
 import com.tenrol.covidshowup.domain.enumeration.Sex;
+import com.tenrol.covidshowup.repository.PatientCaseRepository;
 /**
  * Integration tests for the {@link PatientCaseResource} REST controller.
  */

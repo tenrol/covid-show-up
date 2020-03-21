@@ -1,15 +1,13 @@
 package com.tenrol.covidshowup.service;
 
-import com.tenrol.covidshowup.config.Constants;
-import com.tenrol.covidshowup.domain.Authority;
-import com.tenrol.covidshowup.domain.User;
-import com.tenrol.covidshowup.repository.AuthorityRepository;
-import com.tenrol.covidshowup.repository.UserRepository;
-import com.tenrol.covidshowup.security.AuthoritiesConstants;
-import com.tenrol.covidshowup.security.SecurityUtils;
-import com.tenrol.covidshowup.service.dto.UserDTO;
-
-import io.github.jhipster.security.RandomUtil;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +19,16 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
-import java.util.stream.Collectors;
+import com.tenrol.covidshowup.config.Constants;
+import com.tenrol.covidshowup.domain.Authority;
+import com.tenrol.covidshowup.domain.User;
+import com.tenrol.covidshowup.repository.AuthorityRepository;
+import com.tenrol.covidshowup.repository.UserRepository;
+import com.tenrol.covidshowup.security.AuthoritiesConstants;
+import com.tenrol.covidshowup.security.SecurityUtils;
+import com.tenrol.covidshowup.service.dto.UserDTO;
+
+import io.github.jhipster.security.RandomUtil;
 
 /**
  * Service class for managing users.

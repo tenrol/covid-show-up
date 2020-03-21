@@ -1,7 +1,8 @@
 package com.tenrol.covidshowup.web.rest.vm;
 
-import com.tenrol.covidshowup.service.dto.UserDTO;
 import javax.validation.constraints.Size;
+
+import com.tenrol.covidshowup.service.dto.UserDTO;
 
 /**
  * View Model extending the UserDTO, which is meant to be used in the user management UI.

@@ -1,14 +1,17 @@
 package com.tenrol.covidshowup.service.dto;
 
-import com.tenrol.covidshowup.config.Constants;
-
-import com.tenrol.covidshowup.domain.Authority;
-import com.tenrol.covidshowup.domain.User;
-
-import javax.validation.constraints.*;
 import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import com.tenrol.covidshowup.config.Constants;
+import com.tenrol.covidshowup.domain.Authority;
+import com.tenrol.covidshowup.domain.User;
 
 /**
  * A DTO representing a user, with his authorities.

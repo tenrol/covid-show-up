@@ -1,8 +1,5 @@
 package com.tenrol.covidshowup.config;
 
-import com.tenrol.covidshowup.security.*;
-import com.tenrol.covidshowup.security.jwt.*;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;
@@ -18,6 +15,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter;
 import org.springframework.web.filter.CorsFilter;
 import org.zalando.problem.spring.web.advice.security.SecurityProblemSupport;
+
+import com.tenrol.covidshowup.security.AuthoritiesConstants;
+import com.tenrol.covidshowup.security.jwt.JWTConfigurer;
+import com.tenrol.covidshowup.security.jwt.TokenProvider;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)

@@ -1,13 +1,16 @@
 package com.tenrol.covidshowup.service.mapper;
 
-import com.tenrol.covidshowup.domain.Authority;
-import com.tenrol.covidshowup.domain.User;
-import com.tenrol.covidshowup.service.dto.UserDTO;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import com.tenrol.covidshowup.domain.Authority;
+import com.tenrol.covidshowup.domain.User;
+import com.tenrol.covidshowup.service.dto.UserDTO;
 
 /**
  * Mapper for the entity {@link User} and its DTO called {@link UserDTO}.

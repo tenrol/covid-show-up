@@ -1,12 +1,13 @@
 package com.tenrol.covidshowup.config;
 
-import com.tenrol.covidshowup.service.MailService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.tenrol.covidshowup.service.MailService;
 
 @Configuration
 public class NoOpMailConfiguration {

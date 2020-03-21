@@ -1,5 +1,22 @@
 package com.tenrol.covidshowup.web.rest;
 
+import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.tenrol.covidshowup.domain.User;
 import com.tenrol.covidshowup.repository.UserRepository;
 import com.tenrol.covidshowup.security.SecurityUtils;
@@ -7,19 +24,11 @@ import com.tenrol.covidshowup.service.MailService;
 import com.tenrol.covidshowup.service.UserService;
 import com.tenrol.covidshowup.service.dto.PasswordChangeDTO;
 import com.tenrol.covidshowup.service.dto.UserDTO;
-import com.tenrol.covidshowup.web.rest.errors.*;
+import com.tenrol.covidshowup.web.rest.errors.EmailAlreadyUsedException;
+import com.tenrol.covidshowup.web.rest.errors.InvalidPasswordException;
+import com.tenrol.covidshowup.web.rest.errors.LoginAlreadyUsedException;
 import com.tenrol.covidshowup.web.rest.vm.KeyAndPasswordVM;
 import com.tenrol.covidshowup.web.rest.vm.ManagedUserVM;
-
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.util.*;
 
 /**
  * REST controller for managing the current user's account.

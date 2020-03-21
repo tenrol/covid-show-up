@@ -1,8 +1,9 @@
 package com.tenrol.covidshowup.security;
 
-import com.tenrol.covidshowup.CovidShowUpApp;
-import com.tenrol.covidshowup.domain.User;
-import com.tenrol.covidshowup.repository.UserRepository;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+import java.util.Locale;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,10 +14,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Locale;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import com.tenrol.covidshowup.CovidShowUpApp;
+import com.tenrol.covidshowup.domain.User;
+import com.tenrol.covidshowup.repository.UserRepository;
 
 /**
  * Integrations tests for {@link DomainUserDetailsService}.

@@ -1,7 +1,9 @@
 package com.tenrol.covidshowup.domain;
 
-import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
+
 import com.tenrol.covidshowup.web.rest.TestUtil;
 
 public class PatientCaseTest {

@@ -1,18 +1,21 @@
 package com.tenrol.covidshowup.service;
 
-import com.tenrol.covidshowup.domain.PersistentAuditEvent;
-import com.tenrol.covidshowup.repository.PersistenceAuditEventRepository;
-import com.tenrol.covidshowup.CovidShowUpApp;
-import io.github.jhipster.config.JHipsterProperties;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import com.tenrol.covidshowup.CovidShowUpApp;
+import com.tenrol.covidshowup.domain.PersistentAuditEvent;
+import com.tenrol.covidshowup.repository.PersistenceAuditEventRepository;
+
+import io.github.jhipster.config.JHipsterProperties;
 
 /**
  * Integration tests for {@link AuditEventService}.

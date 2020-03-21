@@ -39,7 +39,7 @@ export const patientCaseRoute: Routes = [
     path: '',
     component: PatientCaseComponent,
     data: {
-      authorities: [Authority.USER],
+      //authorities: [Authority.USER],
       pageTitle: 'PatientCases'
     },
     canActivate: [UserRouteAccessService]
@@ -51,7 +51,7 @@ export const patientCaseRoute: Routes = [
       patientCase: PatientCaseResolve
     },
     data: {
-      authorities: [Authority.USER],
+      //authorities: [Authority.USER],
       pageTitle: 'PatientCases'
     },
     canActivate: [UserRouteAccessService]
@@ -63,7 +63,7 @@ export const patientCaseRoute: Routes = [
       patientCase: PatientCaseResolve
     },
     data: {
-      authorities: [Authority.USER],
+      //authorities: [Authority.USER],
       pageTitle: 'PatientCases'
     },
     canActivate: [UserRouteAccessService]
@@ -75,7 +75,7 @@ export const patientCaseRoute: Routes = [
       patientCase: PatientCaseResolve
     },
     data: {
-      authorities: [Authority.USER],
+      //authorities: [Authority.USER],
       pageTitle: 'PatientCases'
     },
     canActivate: [UserRouteAccessService]
